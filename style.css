@@ -47,6 +47,25 @@ main {
   flex-grow: 1;
   padding: 20px;
 }
+main a {
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+main a::before {
+  color: #fff;
+  content: attr(data-hover);
+  position: absolute;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+main a:hover::before,
+main a:focus::before {
+  transform: scale(0.9);
+  opacity: 0;
+}
 
 ul {
   list-style: circle;
