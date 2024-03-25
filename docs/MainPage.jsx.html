@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: MainPage.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: MainPage.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * MainPage - react компонент, который представляет собой основную страницу переводчика. Состоит из поля ввода текста, поля вывода перевода и поля выбора языка, на который необходимо перевести исходный текст.
+ *
+ * @param {Object} props
+ * @param {string} props.languageList - Список языков
+ */
+function MainPage(props) {
+  return (
+    &lt;div className='grid gap-8 lg:gap-12'>
+      &lt;div className='space-y-4'>
+        &lt;div className='space-y-2'>
+          &lt;h1 className='text-3xl font-bold'>Enter text to translate&lt;/h1>
+          &lt;p className='text-gray-500 dark:text-gray-400'>
+            We'll automatically detect the language.
+          &lt;/p>
+        &lt;/div>
+        &lt;div className='space-y-2'>
+          &lt;div className='space-y-2'>
+            &lt;label className='sr-only' htmlFor='input'>
+              Enter text to translate
+            &lt;/label>
+            &lt;textarea
+              className='w-full min-h-[200px] max-h-[300px] border-2 border-gray-200 rounded-lg resize-none focus:outline-none transition-colors dark:border-gray-800'
+              id='input'
+              placeholder='Enter your text'
+            />
+          &lt;/div>
+          &lt;div className='space-y-2'>
+            &lt;label className='sr-only' htmlFor='output'>
+              Translated text
+            &lt;/label>
+            &lt;div
+              className='border-2 border-gray-200 rounded-lg p-4 min-h-[200px] grid gap-4 transition-colors dark:border-gray-800'
+              id='output'
+            >
+              &lt;p className='text-sm text-gray-500 dark:text-gray-400'>
+                Translation will appear here.
+              &lt;/p>
+            &lt;/div>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;div className='space-y-2'>
+        &lt;div className='space-y-2'>
+          &lt;label
+            className='text-sm font-medium leading-none'
+            htmlFor='language'
+          >
+            Translate to
+          &lt;/label>
+          &lt;div className='w-[200px] rounded-md border border-gray-200 grid transition-colors dark:border-gray-800'>
+            &lt;select
+              className='w-full appearance-none p-3'
+              defaultValue='es'
+              id='language'
+            >
+              &lt;option value='af'>Afrikaans&lt;/option>
+              &lt;option value='sq'>Albanian&lt;/option>
+              &lt;option value='am'>Amharic&lt;/option>
+              &lt;option value='ar'>Arabic&lt;/option>
+              &lt;option value='hy'>Armenian&lt;/option>
+              &lt;option value='az'>Azerbaijani&lt;/option>
+              &lt;option value='eu'>Basque&lt;/option>
+              &lt;option value='be'>Belarusian&lt;/option>
+              &lt;option value='bn'>Bengali&lt;/option>
+              &lt;option value='bs'>Bosnian&lt;/option>
+              &lt;option value='bg'>Bulgarian&lt;/option>
+              &lt;option value='my'>Burmese&lt;/option>
+              &lt;option value='ca'>Catalan&lt;/option>
+              &lt;option value='ceb'>Cebuano&lt;/option>
+              &lt;option value='ny'>Chichewa&lt;/option>
+              &lt;option value='zh'>Chinese (Simplified)&lt;/option>
+              &lt;option value='zh-TW'>Chinese (Traditional)&lt;/option>
+              &lt;option value='co'>Corsican&lt;/option>
+              &lt;option value='hr'>Croatian&lt;/option>
+              &lt;option value='cs'>Czech&lt;/option>
+              &lt;option value='da'>Danish&lt;/option>
+              &lt;option value='nl'>Dutch&lt;/option>
+              &lt;option value='en'>English&lt;/option>
+              &lt;option value='eo'>Esperanto&lt;/option>
+              &lt;option value='et'>Estonian&lt;/option>
+              &lt;option value='tl'>Filipino&lt;/option>
+              &lt;option value='fi'>Finnish&lt;/option>
+              &lt;option value='fr'>French&lt;/option>
+              &lt;option value='fy'>Frisian&lt;/option>
+              &lt;option value='gl'>Galician&lt;/option>
+              &lt;option value='ka'>Georgian&lt;/option>
+              &lt;option value='de'>German&lt;/option>
+              &lt;option value='el'>Greek&lt;/option>
+              &lt;option value='gu'>Gujarati&lt;/option>
+              &lt;option value='ht'>Haitian Creole&lt;/option>
+              &lt;option value='ha'>Hausa&lt;/option>
+              &lt;option value='haw'>Hawaiian&lt;/option>
+              &lt;option value='iw'>Hebrew&lt;/option>
+              &lt;option value='hi'>Hindi&lt;/option>
+              &lt;option value='hmn'>Hmong&lt;/option>
+              &lt;option value='hu'>Hungarian&lt;/option>
+              &lt;option value='is'>Icelandic&lt;/option>
+              &lt;option value='ig'>Igbo&lt;/option>
+              &lt;option value='id'>Indonesian&lt;/option>
+              &lt;option value='ga'>Irish&lt;/option>
+              &lt;option value='it'>Italian&lt;/option>
+              &lt;option value='ja'>Japanese&lt;/option>
+              &lt;option value='jw'>Javanese&lt;/option>
+              &lt;option value='kn'>Kannada&lt;/option>
+              &lt;option value='kk'>Kazakh&lt;/option>
+              &lt;option value='km'>Khmer&lt;/option>
+              &lt;option value='rw'>Kinyarwanda&lt;/option>
+              &lt;option value='ko'>Korean&lt;/option>
+              &lt;option value='ku'>Kurdish (Kurmanji)&lt;/option>
+              &lt;option value='ky'>Kyrgyz&lt;/option>
+              &lt;option value='lo'>Lao&lt;/option>
+              &lt;option value='la'>Latin&lt;/option>
+              &lt;option value='lv'>Latvian&lt;/option>
+              &lt;option value='lt'>Lithuanian&lt;/option>
+              &lt;option value='lb'>Luxembourgish&lt;/option>
+              &lt;option value='mk'>Macedonian&lt;/option>
+              &lt;option value='mg'>Malagasy&lt;/option>
+              &lt;option value='ms'>Malay&lt;/option>
+              &lt;option value='ml'>Malayalam&lt;/option>
+              &lt;option value='mt'>Maltese&lt;/option>
+              &lt;option value='mi'>Maori&lt;/option>
+              &lt;option value='mr'>Marathi&lt;/option>
+              &lt;option value='mn'>Mongolian&lt;/option>
+              &lt;option value='my'>Myanmar (Burmese)&lt;/option>
+              &lt;option value='ne'>Nepali&lt;/option>
+              &lt;option value='no'>Norwegian&lt;/option>
+              &lt;option value='or'>Odia (Oriya)&lt;/option>
+              &lt;option value='ps'>Pashto&lt;/option>
+              &lt;option value='fa'>Persian&lt;/option>
+              &lt;option value='pl'>Polish&lt;/option>
+              &lt;option value='pt'>Portuguese&lt;/option>
+              &lt;option value='pa'>Punjabi&lt;/option>
+              &lt;option value='ro'>Romanian&lt;/option>
+              &lt;option value='ru'>Russian&lt;/option>
+              &lt;option value='sm'>Samoan&lt;/option>
+              &lt;option value='gd'>Scots Gaelic&lt;/option>
+              &lt;option value='sr'>Serbian&lt;/option>
+              &lt;option value='st'>Sesotho&lt;/option>
+              &lt;option value='sn'>Shona&lt;/option>
+              &lt;option value='sd'>Sindhi&lt;/option>
+              &lt;option value='si'>Sinhala&lt;/option>
+              &lt;option value='sk'>Slovak&lt;/option>
+              &lt;option value='sl'>Slovenian&lt;/option>
+              &lt;option value='so'>Somali&lt;/option>
+              &lt;option value='es'>Spanish&lt;/option>
+              &lt;option value='su'>Sundanese&lt;/option>
+              &lt;option value='sw'>Swahili&lt;/option>
+              &lt;option value='sv'>Swedish&lt;/option>
+              &lt;option value='tg'>Tajik&lt;/option>
+              &lt;option value='ta'>Tamil&lt;/option>
+              &lt;option value='te'>Telugu&lt;/option>
+              &lt;option value='th'>Thai&lt;/option>
+              &lt;option value='tr'>Turkish&lt;/option>
+              &lt;option value='uk'>Ukrainian&lt;/option>
+              &lt;option value='ur'>Urdu&lt;/option>
+              &lt;option value='ug'>Uyghur&lt;/option>
+              &lt;option value='uz'>Uzbek&lt;/option>
+              &lt;option value='vi'>Vietnamese&lt;/option>
+              &lt;option value='cy'>Welsh&lt;/option>
+              &lt;option value='xh'>Xhosa&lt;/option>
+              &lt;option value='yi'>Yiddish&lt;/option>
+              &lt;option value='yo'>Yoruba&lt;/option>
+              &lt;option value='zu'>Zulu&lt;/option>
+            &lt;/select>
+            &lt;div className='pointer-events-none absolute inset-y-0 right-0 flex items-center px-3'>
+              &lt;ChevronDownIcon className='h-5 w-5' />
+            &lt;/div>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  )
+}
+
+/**
+ * ChevronDownIcon - react компонент, который представляет иконку стрелочки смотрящей вниз (применяется для выподающего списка языков).
+ *
+ * @param {Object} props
+ * @param {string} props.className - Список стилей Tailwind, если они будут переданы
+ */
+function ChevronDownIcon(props) {
+  return (
+    &lt;svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      &lt;path d='m6 9 6 6 6-6' />
+    &lt;/svg>
+  )
+}
+
+export default MainPage
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ChevronDownIcon">ChevronDownIcon</a></li><li><a href="global.html#MainPage">MainPage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Mar 21 2024 18:13:37 GMT+0300 (Москва, стандартное время)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
